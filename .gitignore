@@ -1,5 +1,6 @@
 # Maven build output
 target/
+*.class
 
 # IDE files
 .idea/
@@ -8,20 +9,32 @@ target/
 .classpath
 .project
 .settings/
+.vscode/
+*.swp
+*.swo
 
 # OS files
 .DS_Store
 Thumbs.db
+._*
 
-# Secrets — never commit these
+# Secrets and environment-specific overrides — NEVER commit these
 .env
+*.env
 config-prod.properties
-*.credentials
+config-local.properties
 secrets.properties
+*.credentials
+*.pem
+*.key
+auth.properties
 
-# Allure results (generated)
+# Allure results (generated — served from target/ by Maven)
 allure-results/
 allure-report/
+
+# Cucumber reports (generated)
+cucumber-reports/
 
 # Logs
 *.log
